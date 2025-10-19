@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasir NekoRamen ネコラーメン</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kasir NekoRamen</h1>
+            <p class="jp-title">ネコラーメン</p>
+            <p>UMKM Makanan Jepang</p>
+        </header>
+
+        <main class="main-container">
+            
+            <div class="menu-gallery-container">
+                <h2><span class="jp-icon">食</span> Makanan</h2>
+                <div class="menu-gallery" id="makanan-gallery">
+                    </div>
+                
+                <h2><span class="jp-icon">飲</span> Minuman</h2>
+                <div class="menu-gallery" id="minuman-gallery">
+                    </div>
+            </div>
+
+            <div class="order-panel-container">
+                
+                <div class="order-controls">
+                    <h2><span class="jp-icon">品</span> Item Terpilih</h2>
+                    <form id="add-item-form">
+                        <div class="selected-item-display">
+                            <span id="selected-item-name" class="placeholder">-- Pilih item dari galeri --</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="item-quantity">Jumlah</label>
+                            <input type="number" id="item-quantity" value="1" required min="1">
+                        </div>
+                        <button type="submit" id="add-to-cart-btn" class="btn btn-add" disabled>Tambahkan ke Keranjang</button>
+                    </form>
+                </div>
+
+                <div class="cart-section">
+                    <h2><span class="jp-icon">籠</span> Keranjang Belanja</h2>
+                    
+                    <div class="cart-table-wrapper">
+                        <table class="cart-table">
+                            <thead>
+                                <tr>
+                                    <th>Nama Item</th>
+                                    <th>Jumlah</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cart-items">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="empty-cart-message" class="empty-cart">
+                        <p>Keranjang masih kosong.</p>
+                    </div>
+                </div>
+
+                <div class="summary-section">
+                    <h2><span class="jp-icon">集計</span> Ringkasan</h2>
+                    <div class="totals">
+                        <div class="total-row">
+                            <span>Total Belanja</span>
+                            <span id="total-price">Rp 0</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Pajak (11%)</span>
+                            <span id="tax">Rp 0</span>
+                        </div>
+                        <div class="total-row grand-total">
+                            <span>Total Bayar</span>
+                            <span id="grand-total">Rp 0</span>
+                        </div>
+                    </div>
+                    <button id="print-receipt-btn" class="btn btn-print" disabled>Cetak Struk</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="menu.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
